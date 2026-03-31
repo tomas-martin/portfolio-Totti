@@ -108,7 +108,7 @@ a { text-decoration: none; color: inherit; }
 .nav-link {
   font-family: var(--font-cond);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gris-claro);
@@ -140,6 +140,18 @@ a { text-decoration: none; color: inherit; }
   width: 26px; height: 2px;
   background: var(--blanco);
   transition: all 0.3s;
+}
+
+/* Animación hamburguesa → X */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero-apodo {
@@ -490,14 +502,14 @@ a { text-decoration: none; color: inherit; }
 .bio-intro {
   font-family: var(--font-cond);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   line-height: 1.5;
   color: var(--blanco);
   margin-bottom: 1rem;
 }
 .bio-text {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: rgba(245,245,245,0.75);
   margin-bottom: 1.5rem;
 }
@@ -514,14 +526,14 @@ a { text-decoration: none; color: inherit; }
 }
 .bdi-label {
   font-family: var(--font-cond);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 3px;
   color: var(--rojo);
 }
 .bdi-val {
   font-family: var(--font-cond);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--blanco);
 }
 
@@ -731,7 +743,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .contacto-desc {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: rgba(245,245,245,0.75);
   margin-bottom: 2rem;
@@ -769,7 +781,7 @@ a { text-decoration: none; color: inherit; }
 }
 .cl-val {
   font-family: var(--font-cond);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--blanco);
 }
 
@@ -876,8 +888,8 @@ a { text-decoration: none; color: inherit; }
   .hero-photo-mobile {
     display: block;
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 55vh;
+    top: 60px; left: 0; right: 0;
+    height: 50vh;
     overflow: hidden;
     z-index: 0;
   }
@@ -905,7 +917,7 @@ a { text-decoration: none; color: inherit; }
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: calc(55vh - 2rem) 5% 5rem 5%;
+    padding: calc(48vh + 60px) 5% 4rem 5%;
     flex: none;
     width: 100%;
   }
@@ -913,33 +925,82 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 640px) {
-  /* Navbar mobile: ocultar el nombre para que quepa */
-  .nav-nombre { display: none; }
-  .nav-escudo { height: 40px; }
+  /* Navbar mobile: nombre visible pero compacto */
+  .nav-nombre { display: flex; }
+  .nav-nombre-main { font-size: 0.85rem; letter-spacing: 2px; }
+  .nav-nombre-apodo { font-size: 0.6rem; letter-spacing: 1px; }
+  .nav-escudo { height: 36px; }
+  .nav-logo { gap: 0.5rem; }
 
   .nav-links {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10,14,35,0.98);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    z-index: 999;
-  }
-  .nav-links.open { display: flex; }
-  .nav-link { font-size: 1.2rem; letter-spacing: 4px; }
-  .nav-toggle { display: flex; z-index: 1001; }
-  .navbar { padding: 1rem 1.5rem; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(10,14,35,0.98);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+
+  z-index: 9999;
+}
+  .nav-links.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+  .nav-link { font-size: 1.4rem; letter-spacing: 4px; }
+  .nav-toggle {
+  display: flex;
+  z-index: 10000; /* más alto que el menú */
+  position: relative;
+}
+  .navbar { padding: 0.8rem 1.2rem; }
+  .navbar.menu-open {
+  background: transparent;
+  border-bottom: none;
+}
 
   .section { padding: 4rem 5%; }
-  .carousel-track { height: 300px; }
+  .carousel-track { height: 260px; }
   .form-row { grid-template-columns: 1fr; }
   .hero-stats-row { gap: 1.2rem; }
   .hero-position-bar { flex-wrap: wrap; gap: 0.8rem; }
-  .hero-firstname, .hero-lastname { font-size: clamp(3rem, 14vw, 5rem); }
-  .hero-apodo { font-size: clamp(1.2rem, 5vw, 2rem); }
+  .hero-firstname, .hero-lastname { font-size: clamp(2.8rem, 13vw, 4.5rem); }
+  .hero-apodo { font-size: clamp(1rem, 4.5vw, 1.8rem); }
+  .hero-cta { font-size: 0.8rem; padding: 0.75rem 1.5rem; }
+  .bio-card { padding: 1.25rem; }
+  .bio-data-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .carousel-btn { font-size: 1.8rem; padding: 8px 13px; }
+  .bdi-val {
+    font-size: 1.05rem;
+  }
+
+  .bdi-label {
+    font-size: 0.7rem;
+  }
+  .contact-link { max-width: 100%; }
+}
+
+/* ===== EXTRA SMALL (360px y menos) ===== */
+@media (max-width: 380px) {
+  .nav-nombre-main { font-size: 0.75rem; letter-spacing: 1px; }
+  .nav-nombre-apodo { display: none; }
+  .hero-firstname, .hero-lastname { font-size: clamp(2.5rem, 15vw, 4rem); }
+  .hs-val { font-size: 1.8rem; }
+  .hero-stats-row { gap: 0.8rem; }
 }
 /* CENTRAR SECCIÓN CONTACTO */
 

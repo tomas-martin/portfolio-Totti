@@ -18,15 +18,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
 
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
+ navToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  navToggle.classList.toggle("active", isOpen);
 
-  // Cerrar nav al hacer click en un link
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
+  // bloquear scroll
+  document.body.style.overflow = isOpen ? "hidden" : "";
+
+  // 🔥 ESTA LÍNEA TE FALTA
+  navbar.classList.toggle("menu-open", isOpen);
+});
+document.querySelector(".nav-logo").addEventListener("click", () => {
+  navLinks.classList.remove("open");
+  navToggle.classList.remove("active");
+  document.body.style.overflow = "";
+  navbar.classList.remove("menu-open");
+});
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    navToggle.classList.remove("active");
+    document.body.style.overflow = "";
+
+    // 🔥 también acá
+    navbar.classList.remove("menu-open");
+  });
+});
+
+  // Cerrar nav al hacer click fuera (en el overlay)
+  navLinks.addEventListener("click", (e) => {
+    if (e.target === navLinks) {
       navLinks.classList.remove("open");
-    });
+      navToggle.classList.remove("active");
+    }
   });
 
   // ===== SCROLL ANIMATIONS =====
