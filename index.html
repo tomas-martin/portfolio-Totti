@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomás Martín - Portfolio Deportivo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-logo">
+        <img src="assets/Talleres_Futsal.png" alt="Andes Talleres SC" class="nav-escudo" />
+        <div class="nav-nombre">
+          <span class="nav-nombre-main">TOMÁS MARTÍN</span>
+          <span class="nav-nombre-apodo">"TOTTI"</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#bio" class="nav-link">Bio</a></li>
+        <li><a href="#video" class="nav-link">Video</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-text">FUTSAL</div>
+      <div class="hero-stripe"></div>
+
+      <!-- Foto mobile (visible solo en mobile, arriba del contenido) -->
+      <div class="hero-photo-mobile">
+        <img src="assets/foto1.jpg" alt="Tomás Martín" class="hero-photo-img-mobile" />
+        <div class="hero-photo-mobile-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-club-badge">
+          <span class="badge-text">ANDES TALLERES</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="hero-apodo">"TOTTI"</span>
+          <span class="hero-firstname">TOMÁS</span>
+          <span class="hero-lastname">MARTÍN</span>
+        </h1>
+        <div class="hero-position-bar">
+          <div class="pos-divider"></div>
+          <span class="pos-text">POSTE / ALA</span>
+          <div class="pos-divider"></div>
+          <span class="pos-sport">FUTSAL</span>
+        </div>
+        <div class="hero-stats-row">
+          <div class="hero-stat">
+            <span class="hs-val">1.71</span>
+            <span class="hs-label">ALTURA</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hs-val">70</span>
+            <span class="hs-label">KG</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hs-val">21</span>
+            <span class="hs-label">AÑOS</span>
+          </div>
+        </div>
+        <a href="#bio" class="hero-cta">Conocé mi historia</a>
+      </div>
+
+      <!-- Foto desktop (oculta en mobile) -->
+      <div class="hero-photo-placeholder">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <img src="assets/foto1.jpg" alt="Tomás Martín" class="hero-photo-img" />
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== BIO ===== -->
+    <section class="section bio-section" id="bio">
+      <div class="section-header">
+        <span class="section-tag">SOBRE MÍ</span>
+        <h2 class="section-title">BIOGRAFÍA</h2>
+      </div>
+      <div class="bio-grid">
+        <div class="bio-photo-col">
+          <div class="bio-photo-frame">
+            <div class="bio-photo-placeholder">
+  <img src="assets/foto-perfil.jpg" class="bio-photo-img">
+</div>
+            <div class="bio-photo-decoration"></div>
+          </div>
+          <div class="bio-social">
+            <a
+              href="https://instagram.com/totti.martin.ok"
+              target="_blank"
+              class="social-btn"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>@totti.martin.ok</span>
+            </a>
+          </div>
+        </div>
+        <div class="bio-text-col">
+          <div class="bio-card">
+            <p class="bio-intro">
+              Jugador de futsal mendocino con más de una década de trayectoria.
+              Nacido en Mendoza.
+            </p>
+            <p class="bio-text">
+              Me desempeño como poste y ala, dos posiciones que me permiten
+              participar tanto en defensa como en ataque. Mi juego se caracteriza
+              por la intensidad, la lectura táctica y el compromiso dentro de la
+              cancha. Desde 2013 vengo creciendo junto a Andes Talleres Sport
+              Club, el club de mi vida.
+            </p>
+            <div class="bio-data-grid">
+              <div class="bio-data-item">
+                <span class="bdi-label">POSICIÓN</span>
+                <span class="bdi-val">Poste / Ala</span>
+              </div>
+              <div class="bio-data-item">
+                <span class="bdi-label">DEBUT EN PRIMERA</span>
+                <span class="bdi-val">2021</span>
+              </div>
+              <div class="bio-data-item">
+                <span class="bdi-label">ALTURA</span>
+                <span class="bdi-val">1,71 m</span>
+              </div>
+              <div class="bio-data-item">
+                <span class="bdi-label">PESO</span>
+                <span class="bdi-val">70 kg</span>
+              </div>
+              <div class="bio-data-item">
+                <span class="bdi-label">CLUB</span>
+                <span class="bdi-val">Andes Talleres SC</span>
+              </div>
+              <div class="bio-data-item">
+                <span class="bdi-label">DESDE</span>
+                <span class="bdi-val">2013</span>
+              </div>
+            </div>
+          </div>
+          <!-- Trayectoria dentro de bio -->
+          <div class="trayectoria-block">
+            <h3 class="tray-title">TRAYECTORIA</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2013 — Presente</span>
+                  <span class="tl-club">Andes Talleres Sport Club</span>
+                  <span class="tl-detail">Godoy Cruz, Mendoza</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIDEO ===== -->
+    <section class="section video-section" id="video">
+      <div class="section-header">
+        <span class="section-tag">HIGHLIGHTS</span>
+        <h2 class="section-title">VIDEO</h2>
+      </div>
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/bBaJmZJ66yA?si=FsTR9d-T3F6U8R-r"
+            title="Tomás Martín - Highlights"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-caption">
+          <span class="vc-number">01</span>
+          <div class="vc-text">
+            <strong>HIGHLIGHTS</strong>
+            <p>Tomás Martín · Andes Talleres · Futsal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="section galeria-section" id="galeria">
+      <div class="section-header">
+        <span class="section-tag">IMÁGENES</span>
+        <h2 class="section-title">GALERÍA</h2>
+      </div>
+      <div class="galeria-grid" id="galeriaGrid">
+
+  <div class="carousel">
+
+   <button class="carousel-btn prev" id="prevBtn">&#8249;</button>
+
+  <div class="carousel-track" id="carouselTrack">
+    <img src="assets/foto.JPEG" alt="Foto 1">
+    <img src="assets/foto2.JPG" alt="Foto 2">
+    <img src="assets/foto3.JPG" alt="Foto 3">
+    <img src="assets/foto4.jpeg" alt="Foto 4">
+    <img src="assets/foto5.jpg" alt="Foto 5">
+    <img src="assets/foto6.JPG" alt="Foto 6">
+    <img src="assets/foto7.JPG" alt="Foto 7">
+    <img src="assets/foto8.JPG" alt="Foto 8">
+    <img src="assets/foto9.jpg" alt="Foto 9">
+  </div>
+
+  <button class="carousel-btn next" id="nextBtn">&#8250;</button>
+
+</div>
+
+</div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose">&times;</button>
+        <button class="lb-prev" id="lbPrev">&#8249;</button>
+        <button class="lb-next" id="lbNext">&#8250;</button>
+        <div class="lb-img-wrap">
+          <img src="" alt="" id="lbImg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+<section class="section contacto-section" id="contacto">
+  <div class="section-header">
+    <h2 class="section-title">CONTACTO</h2>
+  </div>
+
+  <div class="contacto-grid" style="justify-content: center;">
+    <div class="contacto-info" style="text-align: center;">
+      <p class="contacto-desc">
+  Disponible para equipos, torneos y propuestas.
+</p>
+
+      <div class="contacto-links" style="justify-content: center;">
+        
+        <!-- EMAIL -->
+        <a href="mailto:tomasmartin4572@gmail.com" class="contact-link">
+          <div class="cl-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="cl-text">
+            <span class="cl-label">EMAIL</span>
+            <span class="cl-val">tomasmartin4572@gmail.com</span>
+          </div>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com/totti.martin.ok" target="_blank" class="contact-link">
+          <div class="cl-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="cl-text">
+            <span class="cl-label">INSTAGRAM</span>
+            <span class="cl-val">@totti.martin.ok</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">TOMÁS "TOTTI" MARTÍN</div>
+        <p class="footer-club">Andes Talleres Sport Club · Mendoza, Argentina</p>
+        <p class="footer-copy">© 2025 · Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
